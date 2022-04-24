@@ -2,7 +2,7 @@
 const generateBtn = document.querySelector("#generate");
 
 const getPasswordLength = () => {
-  return 10;
+  return;
 };
 
 const getPasswordCriteria = () => {
@@ -15,7 +15,7 @@ const getPasswordCriteria = () => {
 };
 
 const createRandomPassword = () => {
-  return "kdUE28(@d0";
+  return [];
 };
 
 // main function to generate the random password
