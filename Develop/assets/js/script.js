@@ -6,12 +6,95 @@ const getPasswordLength = () => {
 };
 
 const getPasswordCriteria = () => {
-  return [
-    "abcdefghijklmnopqrstuvwxyz",
-    "ABCDEFGHIJKLMNOPQRSTUVWXYZ",
-    "0123456789",
-    " !\"#$%&'()*+,-./:;<=>?@[]^_`{|}~",
+  let values; = []
+
+  const lowercase = [
+    "a",
+    "b",
+    "c",
+    "d",
+    "e",
+    "f",
+    "g",
+    "h",
+    "i",
+    "j",
+    "k",
+    "l",
+    "m",
+    "n",
+    "o",
+    "p",
+    "q",
+    "r",
+    "s",
+    "t",
+    "u",
+    "v",
+    "w",
+    "x",
+    "y",
+    "z",
   ];
+
+  const uppercase = [
+    "A",
+    "B",
+    "C",
+    "D",
+    "E",
+    "F",
+    "G",
+    "H",
+    "I",
+    "J",
+    "K",
+    "L",
+    "M",
+    "N",
+    "O",
+    "P",
+    "Q",
+    "R",
+    "S",
+    "T",
+    "U",
+    "V",
+    "W",
+    "X",
+    "Y",
+    "Z",
+  ];
+
+  const symbols = [
+    "!",
+    "#",
+    "$",
+    "%",
+    "&",
+    "*",
+    "+",
+    ",",
+    "-",
+    ".",
+    "/",
+    ":",
+    ";",
+    "<",
+    "=",
+    ">",
+    "?",
+    "@",
+    "[",
+    "]",
+    "_",
+    "`",
+    "{",
+    "|",
+    "}",
+  ];
+
+  const numbers = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
 };
 
 const createRandomPassword = () => {
@@ -25,34 +108,39 @@ const generatePassword = () => {
     prompt("Choose a length of password between 8-128 characters")
   );
   if (passwordLength >= 8 && passwordLength <= 128) {
-    alert("Your password length is" + passwordLength + "Press OK to continue.");
+    prompt(
+      "Your password length is" + passwordLength + "Press OK to continue."
+    );
   } else {
     alert("No length chosen!! Refresh and pick number between 8-128");
   }
 
-  var lowerCase = "abcdefghijklmnopqrstuvwxyz";
-  var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  var numbers = "0123456789";
-  var symbols = " !\"#$%&'()*+,-./:;<=>?@[]^_`{|}~";
-
   // get the password criteria
   const passwordCriteria = getPasswordCriteria();
-
-  if (alert("Do you want any lowercase?")) {
-    passwordCriteria.push("abcdefghijklmnopqrstuvwxyz");
+  // lowercase prompt
+  const lowercase = confirm("Do you want lowercase?");
+  if (lowercase) {
+    values = values.concat(lowercase);
   }
 
-  if (alert("Do you want any uppercase?")) {
-    passwordCriteria.push("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
+  // uppercase prompt
+  const uppercase = confirm("Do you want uppercase?");
+  if (uppercase) {
+    values = values.concat(uppercase);
+  }
+  // numbers prompt
+  const numbers = confirm("Do you want numbers?");
+  if (numbers) {
+    values = values.concat(numbers);
+  }
+  // symbols prompt
+  const symbols = confirm("Do you want symbols?");
+  if (numbers) {
+    values = values.concat(symbols);
   }
 
-  if (alert("Do you want any numbers?")) {
-    passwordCriteria.push("0123456789");
-  }
+  console.log(values);
 
-  if (alert("Do you want any symbols?")) {
-    passwordCriteria.push("!\"#$%&'()*+,-./:;<=>?@[]^_`{|}~");
-  }
   // create random password
   const password = createRandomPassword(passwordLength, passwordCriteria);
 

@@ -13,3 +13,5 @@ As the requirements are for the password to be between 8-128 characters I have a
 ### 3 - Added script for password criteria
 
 Added the script for the password criteria to give prompts for the different variables
+
+## Code incomplete
