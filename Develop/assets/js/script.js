@@ -40,28 +40,19 @@ const generatePassword = () => {
 
   if (alert("Do you want any lowercase?")) {
     passwordCriteria.push("abcdefghijklmnopqrstuvwxyz");
-  } else {
-    alert("Lowercase not selected");
   }
 
   if (alert("Do you want any uppercase?")) {
     passwordCriteria.push("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
-  } else {
-    alert("Uppercase not selected");
   }
 
   if (alert("Do you want any numbers?")) {
     passwordCriteria.push("0123456789");
-  } else {
-    alert("Numbers not selected");
   }
 
   if (alert("Do you want any symbols?")) {
     passwordCriteria.push("!\"#$%&'()*+,-./:;<=>?@[]^_`{|}~");
-  } else {
-    alert("Symbols not selected");
   }
-
   // create random password
   const password = createRandomPassword(passwordLength, passwordCriteria);
 

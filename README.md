@@ -11,3 +11,5 @@ As the requirements are for the password to be between 8-128 characters I have a
 ![password_length_prompt](./Develop/assets/screenshots/password_prompt_screenshot.jpg)
 
 ### 3 - Added script for password criteria
+
+Added the script for the password criteria to give prompts for the different variables
