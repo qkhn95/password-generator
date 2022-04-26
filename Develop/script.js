@@ -68,7 +68,6 @@ const number = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 
 const symbol = [
   "!",
-  '"',
   "#",
   "$",
   "%",
@@ -101,16 +100,28 @@ const symbol = [
 ];
 
 // password criteria
-const getPasswordCriteria = (lowerCase, upperCase, number, symbol) => {
-  console.log();
-};
+const getPasswordCriteria = () => {};
 
 const createRandomPassword = () => {};
 
 // main function to generate the random password
-const generatePassword = () => {
+const generatePassword = (lowerCase,upperCase,number,symbol) => {
   // get the password length
-  const passwordLength = getPasswordLength();
+  const passwordLength = getPasswordLength(  
+  // Alert when button clicked
+  var passwordLength = prompt("Choose a length of the password between 8-128 characters");
+  console.log(length);
+
+  if (passwordLength > 8 || passwordLength < 128) {
+    alert(
+      "Your password length is " + passwordLength + ". Press OK to continue"
+    );
+  }
+  else {
+    alert(
+      "Password must be between 8-128 characters. Click OK to try again"
+    )}
+    );
 
   // get the password criteria
   const passwordCriteria = getPasswordCriteria();
