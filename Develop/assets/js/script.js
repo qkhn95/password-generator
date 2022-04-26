@@ -2,7 +2,6 @@
 const generateBtn = document.querySelector("#generate");
 
 const getPasswordLength = () => {
-  // Need to fix this part
   return [];
 };
 
@@ -21,27 +20,47 @@ const createRandomPassword = () => {
 
 // main function to generate the random password
 const generatePassword = () => {
-  // get the password length
+  console.log("function 1");
   const passwordLength = getPasswordLength(
     prompt("Choose a length of password between 8-128 characters")
   );
-
-  console.log(passwordLength);
-
-  if (isNaN(passwordLength)) {
-    alert(
-      "You must choose a number between 8 and 128!! Refresh page to restart"
-    );
-  } else if (passwordLength >= 8 && passwordLength <= 128) {
-    alert(
-      "Your password length is" + passwordLength + ". Press OK to continue."
-    );
+  if (passwordLength >= 8 && passwordLength <= 128) {
+    alert("Your password length is" + passwordLength + "Press OK to continue.");
   } else {
-    alert("No length chosen, please pick between 8-128 characters.");
+    alert("No length chosen!! Refresh and pick number between 8-128");
   }
+
+  var lowerCase = "abcdefghijklmnopqrstuvwxyz";
+  var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  var numbers = "0123456789";
+  var symbols = " !\"#$%&'()*+,-./:;<=>?@[]^_`{|}~";
 
   // get the password criteria
   const passwordCriteria = getPasswordCriteria();
+
+  if (alert("Do you want any lowercase?")) {
+    passwordCriteria.push("abcdefghijklmnopqrstuvwxyz");
+  } else {
+    alert("Lowercase not selected");
+  }
+
+  if (alert("Do you want any uppercase?")) {
+    passwordCriteria.push("ABCDEFGHIJKLMNOPQRSTUVWXYZ");
+  } else {
+    alert("Uppercase not selected");
+  }
+
+  if (alert("Do you want any numbers?")) {
+    passwordCriteria.push("0123456789");
+  } else {
+    alert("Numbers not selected");
+  }
+
+  if (alert("Do you want any symbols?")) {
+    passwordCriteria.push("!\"#$%&'()*+,-./:;<=>?@[]^_`{|}~");
+  } else {
+    alert("Symbols not selected");
+  }
 
   // create random password
   const password = createRandomPassword(passwordLength, passwordCriteria);
@@ -51,7 +70,7 @@ const generatePassword = () => {
 
 // Write password to the #password input
 const writePassword = () => {
-  const password = generatePassword();
+  const password = generatePassword([]);
   const passwordText = document.querySelector("#password");
 
   passwordText.value = password;
