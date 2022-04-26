@@ -14,4 +14,8 @@ As the requirements are for the password to be between 8-128 characters I have a
 
 Added the script for the password criteria to give prompts for the different variables
 
+### 4 Added for loop
+
+Added for loop, still having problem with code though
+
 ## Code incomplete
