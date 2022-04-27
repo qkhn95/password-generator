@@ -42,3 +42,9 @@ Had initially changed main code of generator however after getting advice this d
 https://github.com/qkhn95/password-generator/tree/dev
 
 ### Deployed Page
+
+https://qkhn95.github.io/password-generator/
+
+## Experience of this project
+
+I found this project a bit troublesome to understand. Some of the concepts were pretty tough, and debugging and trying to understand why the generator was not working took a lot of time.
