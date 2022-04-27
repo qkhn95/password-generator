@@ -14,8 +14,31 @@ As the requirements are for the password to be between 8-128 characters I have a
 
 Added the script for the password criteria to give prompts for the different variables
 
-### 4 Added for loop
+### 4 - Added for loop
 
 Added for loop, still having problem with code though
 
-## Code incomplete
+### 5 - Reverted Main Function of generator as this did not need to be changed
+
+Had initially changed main code of generator however after getting advice this did not need to be changed
+
+### 6 - Generator now fully operational
+
+## Screenshots
+
+![password_generator0](./Develop/assets/screenshots/password-generator.jpg)
+
+## Technologies
+
+- HTML
+- Javascript
+- Paint (for screenshots)
+- Chrome Console
+
+* MDN Docs
+
+## Github
+
+https://github.com/qkhn95/password-generator/tree/dev
+
+### Deployed Page

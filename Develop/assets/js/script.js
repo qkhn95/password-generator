@@ -7,13 +7,14 @@ const getPasswordLength = () => {
   );
 
   if (length >= 8 && length <= 128) {
-    return length;
-  } else alert("Password must be between 8-128 characters!!!");
+    prompt("Your password length is" + length + "Press OK to continue.");
+  } else {
+    alert("No length chosen!! Refresh and pick number between 8-128");
+  }
 };
 
 const getPasswordCriteria = () => {
-  let passwordValues;
-  [];
+  let passwordValues = [];
 
   const lowercase = [
     "a",
@@ -115,20 +116,47 @@ const getPasswordCriteria = () => {
   }
   // symbols prompt
   const symbolsQuestion = confirm("Do you want symbols?");
-  if (numbers) {
+  if (symbols) {
     passwordValues = passwordValues.concat(symbols);
   }
-};
-
-// main function to generate the random password
-const generatePassword = () => {
-  // get the password criteria
-  const passwordCriteria = getPasswordCriteria();
 
   return passwordValues;
 };
 
-// for loop to allow reload for different password
+const createRandomPassword = (passwordLength, criteria) => {
+  console.log(passwordLength, criteria);
+  let password = "";
+
+  for (let i = 0; i < passwordLength; i++) {
+    console.log("index being checked in for loop: ", i);
+    let characters = criteria[i];
+    console.log("Characters:", characters);
+
+    let randNumber = Math.floor(Math.random() * criteria.length);
+    console.log("Random index to add to pw:", randNumber);
+
+    password += criteria[randNumber];
+    console.log(password);
+  }
+
+  const allCharacters = criteria.join();
+
+  return password;
+};
+
+// main function to generate the random password
+const generatePassword = () => {
+  // get the password length
+  const passwordLength = getPasswordLength();
+
+  // get the password criteria
+  const passwordCriteria = getPasswordCriteria();
+
+  // create random password
+  const password = createRandomPassword(passwordLength, passwordCriteria);
+
+  return password;
+};
 
 // Write password to the #password input
 const writePassword = () => {
