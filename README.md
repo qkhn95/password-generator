@@ -34,8 +34,8 @@ Had initially changed main code of generator however after getting advice this d
 - Javascript
 - Paint (for screenshots)
 - Chrome Console
-
-* MDN Docs
+- MDN Docs
+- W3Schools
 
 ## Github
 

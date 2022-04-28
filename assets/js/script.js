@@ -133,7 +133,7 @@ const createRandomPassword = (passwordLength, criteria) => {
     console.log("Characters:", characters);
 
     let randNumber = Math.floor(Math.random() * criteria.length);
-    console.log("Random index to add to pw:", randNumber);
+    console.log("Random number for the password:", randNumber);
 
     password += criteria[randNumber];
     console.log(password);
